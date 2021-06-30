@@ -146,7 +146,7 @@ Material:
     - _LightWrappingCompensationFactor: 0.8
     - _LightingCalculationType: 0
     - _Matcap1Blend: 0
-    - _Matcap1Strength: 0.1
+    - _Matcap1Strength: 0.15
     - _Matcap2Blend: 0
     - _Matcap2Strength: 1
     - _Matcap3Blend: 0

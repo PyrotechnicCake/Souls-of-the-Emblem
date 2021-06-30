@@ -194,8 +194,8 @@ Material:
     - _UseMetallic: 1
     - _UseSubsurfaceScattering: 0
     - _UseVanishing: 0
-    - _VanishingEnd: 0
-    - _VanishingStart: 0
+    - _VanishingEnd: 5.12
+    - _VanishingStart: 0.2
     - _VertexColorType: 2
     - _WriteMask: 255
     - _ZTest: 4
