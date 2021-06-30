@@ -12,6 +12,10 @@ namespace Pyro
         public float mouseX;
         public float mouseY;
 
+        public bool dodgeInput;
+        public bool RollFlag;
+        public bool isInteracting;
+
         //track inputs
         PlayerControls inputActions;
         CameraHandler cameraHandler;
@@ -57,6 +61,7 @@ namespace Pyro
         public void TickInput(float delta)
         {
             MoveInput(delta);
+            HandleRollInput(delta);
         }
 
         //take movement inputs
@@ -67,6 +72,16 @@ namespace Pyro
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
             mouseX = cameraInput.x;
             mouseY = cameraInput.y;
+        }
+
+        private void HandleRollInput(float delata)
+        {
+            dodgeInput = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+
+            if (dodgeInput)
+            {
+                RollFlag = true;
+            }
         }
     }
 }
