@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 1
-  controlID: 18
+  controlID: 40
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 19
+  controlID: 41
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 128
+  controlID: 18
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 129
+  controlID: 19
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -424,9 +424,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 223a0000
+      m_SelectedIDs: 8a3c0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 5cfbffff9e390000ac390000e4390000
+      m_ExpandedIDs: 5cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -486,9 +486,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.4156882, y: 1.5041275, z: -1.4725101}
+    m_Target: {x: -0.1937787, y: 2.1134653, z: -1.6433785}
     speed: 2
-    m_Value: {x: 1.4156882, y: 1.5041275, z: -1.4725101}
+    m_Value: {x: -0.1937787, y: 2.1134653, z: -1.6433785}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -535,13 +535,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0056243557, y: 0.9943073, z: -0.081025764, w: 0.06901868}
+    m_Target: {x: 0.0009097335, y: 0.9963933, z: -0.08420556, w: 0.010764136}
     speed: 2
-    m_Value: {x: 0.005502791, y: 0.9944061, z: -0.08103382, w: 0.0675269}
+    m_Value: {x: 0.0009097304, y: 0.99638987, z: -0.08420527, w: 0.010764099}
   m_Size:
-    m_Target: 2.3910732
+    m_Target: 3.591073
     speed: 2
-    m_Value: 2.0910733
+    m_Value: 3.591073
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -735,21 +735,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Graphics/Models/Characters/Frederick/Textures
+    - Assets/Scripts
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Graphics/Models/Characters/Frederick/Textures
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Commits\Souls-of-the-Emblem\Souls of the Emblem
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea3c0000
-    m_LastClickedID: 15594
-    m_ExpandedIDs: 00000000d43c0000da3c0000e23c0000e43c0000e63c000000ca9a3b
+    m_SelectedIDs: f83c0000
+    m_LastClickedID: 15608
+    m_ExpandedIDs: 00000000d23c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -777,7 +777,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d43c0000
+    m_ExpandedIDs: 00000000d23c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

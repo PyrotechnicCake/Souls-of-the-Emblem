@@ -19,6 +19,7 @@ namespace Pyro
         {
             inputHandler.isInteracting = anim.GetBool("isInteracting");
             inputHandler.RollFlag = false;
+            inputHandler.sprintFlag = false;
         }
     }
 }

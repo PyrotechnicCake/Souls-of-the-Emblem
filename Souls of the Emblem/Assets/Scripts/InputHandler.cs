@@ -14,6 +14,8 @@ namespace Pyro
 
         public bool dodgeInput;
         public bool RollFlag;
+        public bool sprintFlag;
+        public float rollInputTimer;
         public bool isInteracting;
 
         //track inputs
@@ -23,7 +25,7 @@ namespace Pyro
         Vector2 movementInput;
         Vector2 cameraInput;
 
-        private void Awake()
+        private void Start()
         {
             cameraHandler = CameraHandler.singleton;
         }
@@ -74,13 +76,24 @@ namespace Pyro
             mouseY = cameraInput.y;
         }
 
-        private void HandleRollInput(float delata)
+        private void HandleRollInput(float delta)
         {
             dodgeInput = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
 
             if (dodgeInput)
             {
-                RollFlag = true;
+                rollInputTimer += delta;
+                sprintFlag = true;
+            }
+            else
+            {
+                if (rollInputTimer > 0 && rollInputTimer < 0.5f)
+                {
+                    sprintFlag = false;
+                    RollFlag = true;
+                }
+
+                rollInputTimer = 0;
             }
         }
     }
