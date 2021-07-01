@@ -15,6 +15,8 @@ namespace Pyro
 
         [Header("Player Flags")]
         public bool isSprinting;
+        public bool isInAir;
+        public bool isGrounded;
 
         void Start()
         {
@@ -33,6 +35,7 @@ namespace Pyro
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         }
 
         private void FixedUpdate()
@@ -51,6 +54,11 @@ namespace Pyro
             inputHandler.RollFlag = false;
             inputHandler.sprintFlag = false;
             isSprinting = inputHandler.dodgeInput;
+
+            if (isInAir)
+            {
+                playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+            }
         }
     }
 }
