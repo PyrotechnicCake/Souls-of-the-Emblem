@@ -625,6 +625,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50.879, y: -237.715, z: -143.18}
+--- !u!4 &925714417 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2916741891282405652, guid: cc57420149ccecf40a18b35848aab985, type: 3}
+  m_PrefabInstance: {fileID: 979955215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &926844696
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Redrick
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cc57420149ccecf40a18b35848aab985, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: cc57420149ccecf40a18b35848aab985, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1304,6 +1313,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591643831}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1651324715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 925714417}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.056
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.2072321
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.20722628
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.676061
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.67605746
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 34.083
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_Name
+      value: Iron Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796854220325093902, guid: b68b694667537a54b982b9fde9815676, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 42d6eb408cbdab54fa291dac5afbb413, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b68b694667537a54b982b9fde9815676, type: 3}
 --- !u!1 &1896126542
 GameObject:
   m_ObjectHideFlags: 0
