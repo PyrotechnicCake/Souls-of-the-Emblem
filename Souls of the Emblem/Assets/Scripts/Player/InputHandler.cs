@@ -25,6 +25,7 @@ namespace Pyro
         PlayerControls inputActions;
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
+        PlayerManager playerManager;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -33,6 +34,7 @@ namespace Pyro
         {
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            playerManager = GetComponent<PlayerManager>();
         }
 
         //start reciving inputs
@@ -98,12 +100,12 @@ namespace Pyro
             inputActions.PlayerActions.Heavy.performed += i => heavyInput = true;
 
             //R1 (attack button) is for attacks/staff effects
-            if(attackInput)
+            if(attackInput && !playerManager.isInteracting) //I added && !playerManager.isInteracting to fix a bug, might need to delete later
             {
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
             }
 
-            if (heavyInput)
+            if (heavyInput && !playerManager.isInteracting)
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
