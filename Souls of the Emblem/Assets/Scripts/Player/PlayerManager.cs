@@ -17,12 +17,13 @@ namespace Pyro
         public bool isSprinting;
         public bool isInAir;
         public bool isGrounded;
+        public bool canDoCombo;
 
         void Start()
         {
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
-            cameraHandler = CameraHandler.singleton;
+            cameraHandler = FindObjectOfType<CameraHandler>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
         }
 
@@ -31,6 +32,8 @@ namespace Pyro
             isInteracting = anim.GetBool("isInteracting");
 
             float delta = Time.deltaTime;
+
+            canDoCombo = anim.GetBool("canDoCombo");
 
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);

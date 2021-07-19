@@ -9,6 +9,9 @@ namespace Pyro
         WeaponHolderSlot leftHandSlot;
         WeaponHolderSlot rightHandSlot;
 
+        //shield collider
+        DamageCollider weaponCollider;
+
         private void Awake()
         {
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
@@ -30,11 +33,32 @@ namespace Pyro
             if(isLeft)
             {
                 leftHandSlot.LoadWeaponModel(weaponItem);
+                //loadshieldcollider
             }
             else
             {
                 rightHandSlot.LoadWeaponModel(weaponItem);
+                LoadWeaponDamageCollider();
             }
         }
+
+        #region Handle Weapon Damage Colliders
+
+        public void LoadWeaponDamageCollider()
+        {
+            weaponCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        }
+
+        public void OpenWeaponDamageCollider()
+        {
+            weaponCollider.EnableDamageCollider();
+        }
+
+        public void CloseWeaponDamageCollider()
+        {
+            weaponCollider.DisableDamageCollider();
+        }
+
+        #endregion
     }
 }

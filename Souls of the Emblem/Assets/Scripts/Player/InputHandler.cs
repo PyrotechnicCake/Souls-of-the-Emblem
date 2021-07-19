@@ -19,6 +19,7 @@ namespace Pyro
 
         public bool RollFlag;
         public bool sprintFlag;
+        public bool comboFlag;
         public float rollInputTimer;
 
         //track inputs
@@ -100,9 +101,23 @@ namespace Pyro
             inputActions.PlayerActions.Heavy.performed += i => heavyInput = true;
 
             //R1 (attack button) is for attacks/staff effects
-            if(attackInput && !playerManager.isInteracting) //I added && !playerManager.isInteracting to fix a bug, might need to delete later
+            if(attackInput) 
             {
-                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                if(playerManager.canDoCombo)
+                {
+                    comboFlag = true;
+                    playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
+                    comboFlag = false;
+                }
+                else if (!playerManager.isInteracting)
+                {
+                    if (playerManager.isInteracting)
+                        return;
+                    if (playerManager.canDoCombo)
+                        return;
+
+                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                }
             }
 
             if (heavyInput && !playerManager.isInteracting)
