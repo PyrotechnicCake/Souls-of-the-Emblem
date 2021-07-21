@@ -12,8 +12,12 @@ namespace Pyro
         //shield collider
         DamageCollider weaponCollider;
 
+        Animator animator;
+
         private void Awake()
         {
+            animator = GetComponent<Animator>();
+
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
             {
@@ -39,6 +43,15 @@ namespace Pyro
             {
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 LoadWeaponDamageCollider();
+
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weaponItem.weapon_idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Locomotion", 0.2f);
+                }
             }
         }
 

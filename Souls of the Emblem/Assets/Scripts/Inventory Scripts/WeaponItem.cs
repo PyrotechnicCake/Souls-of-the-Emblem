@@ -10,7 +10,10 @@ namespace Pyro
         public GameObject modelPrefab;
         public bool isUnarmed;
 
-        [Header("One handed sword attack animations")]
+        [Header("Idle animations")]
+        public string weapon_idle;
+
+        [Header("Attack animations")]
         public string Light_Attack_1;
         public string Light_Attack_2;
         public string Heavy_Attack_1;
