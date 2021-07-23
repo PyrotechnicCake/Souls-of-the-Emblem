@@ -7,7 +7,9 @@ namespace Pyro
     public class DamageCollider : MonoBehaviour
     {
         Collider damageCollider;
-        public int attack = 10;
+
+        //attack damage value
+        int attack;
 
         private void Awake()
         {
@@ -15,6 +17,8 @@ namespace Pyro
             damageCollider.gameObject.SetActive(true);
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;
+            //add my attack
+            attack = GetComponent<WeaponStats>().Mt;// + Playerstats.Str
         }
 
         public void EnableDamageCollider()

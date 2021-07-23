@@ -20,3 +20,6 @@ MonoBehaviour:
   Light_Attack_1: Sword_Attack_1
   Light_Attack_2: Sword_Attack_2
   Heavy_Attack_1: Sword_Heavy_1
+  Mt: 5
+  Wt: 5
+  crit: 0

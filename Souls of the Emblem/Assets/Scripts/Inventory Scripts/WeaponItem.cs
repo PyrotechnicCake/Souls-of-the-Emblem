@@ -10,6 +10,7 @@ namespace Pyro
         public GameObject modelPrefab;
         public bool isUnarmed;
 
+        //Weapon Animations
         [Header("Idle animations")]
         public string weapon_idle;
 
