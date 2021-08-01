@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f413389c1b0d7b44f8f89ffe17214847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightWeapon: {fileID: 11400000, guid: 95e7fd35338809a468196ff55a20ebd8, type: 2}
+  rightWeapon: {fileID: 11400000, guid: bf1c2a208d3fec741a1ae9ff7f9bfdf8, type: 2}
   leftWeapon: {fileID: 11400000, guid: 1f3b92a0a7c426f4f8f66b97fae93fa7, type: 2}
 --- !u!114 &296260449
 MonoBehaviour:

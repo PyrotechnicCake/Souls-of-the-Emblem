@@ -187,7 +187,7 @@ Material:
     - _Shadow: 0.5
     - _ShadowLift: 0
     - _ShadowMaskType: 0
-    - _Smoothness: 1
+    - _Smoothness: 0.6
     - _SmoothnessTextureChannel: 0
     - _SpecularDetailStrength: 1
     - _SpecularHighlights: 1
