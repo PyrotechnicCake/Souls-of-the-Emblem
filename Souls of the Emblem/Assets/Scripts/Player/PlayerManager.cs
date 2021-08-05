@@ -58,6 +58,8 @@ namespace Pyro
             inputHandler.sprintFlag = false;
             inputHandler.attackInput = false;
             inputHandler.heavyInput = false;
+            inputHandler.d_Pad_Left = false;
+            inputHandler.d_Pad_Right = false;
 
             if (isInAir)
             {

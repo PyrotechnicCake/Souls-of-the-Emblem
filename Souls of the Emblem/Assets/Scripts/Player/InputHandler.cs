@@ -17,6 +17,10 @@ namespace Pyro
         public bool attackInput;
         public bool heavyInput;
 
+        //depad inputs
+        public bool d_Pad_Left;
+        public bool d_Pad_Right;
+
         public bool RollFlag;
         public bool sprintFlag;
         public bool comboFlag;
@@ -62,6 +66,7 @@ namespace Pyro
             MoveInput(delta);
             HandleRollInput(delta);
             HandleAttackInput(delta);
+            HandleQuickSlotInput();
         }
 
         //take movement inputs
@@ -123,6 +128,20 @@ namespace Pyro
             if (heavyInput && !playerManager.isInteracting)
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
+        }
+
+        private void HandleQuickSlotInput()
+        {
+            inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
+            inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
+            if (d_Pad_Right)
+            {
+                playerInventory.ChangeWeapon(1);
+            }
+            else if(d_Pad_Left)
+            {
+                playerInventory.ChangeWeapon(-1);
             }
         }
     }
