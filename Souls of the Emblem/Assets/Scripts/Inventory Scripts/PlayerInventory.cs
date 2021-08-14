@@ -35,10 +35,38 @@ namespace Pyro
 
             if (currentWeaponIndex < -1)
             {
-                currentWeaponIndex = weaponsInPockets.Length - 1;
+                currentWeaponIndex = weaponsInPockets.Length -1;
+                rightWeapon = weaponsInPockets[currentWeaponIndex];
+                WeaponSlotManager.LoadWeaponOnSlot(weaponsInPockets[currentWeaponIndex], false);
+            }
+            else if (currentWeaponIndex > weaponsInPockets.Length - 1)
+            {
+                currentWeaponIndex = -1;
+                rightWeapon = unarmedWeapon; //unarmedWeapon
+                WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+            }
+            else if (currentWeaponIndex == -1)
+            {
+                rightWeapon = unarmedWeapon; //unarmedWeapon
+                WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+            }
+            else if (weaponsInPockets[currentWeaponIndex] != null)
+            {
+                rightWeapon = weaponsInPockets[currentWeaponIndex];
+                WeaponSlotManager.LoadWeaponOnSlot(weaponsInPockets[currentWeaponIndex], false);
+            }
+            else if (currentWeaponIndex == 0 && weaponsInPockets[0] == null)
+            {
+                currentWeaponIndex = currentWeaponIndex + i;
+            }
+            else
+            {
+                currentWeaponIndex = -1;
+                rightWeapon = unarmedWeapon; //unarmedWeapon
+                WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
             }
 
-            if (currentWeaponIndex == 0 && weaponsInPockets[0] != null)
+            /*if (currentWeaponIndex == 0 && weaponsInPockets[0] != null)
             {
                 rightWeapon = weaponsInPockets[currentWeaponIndex];
                 WeaponSlotManager.LoadWeaponOnSlot(weaponsInPockets[currentWeaponIndex], false);
@@ -56,19 +84,14 @@ namespace Pyro
             {
                 currentWeaponIndex = currentWeaponIndex + i;
             }
-            else
+             else
             {
                 currentWeaponIndex = -1;
                 rightWeapon = unarmedWeapon; //unarmedWeapon
                 WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
-            }
+            }*/
 
-            if (currentWeaponIndex > weaponsInPockets.Length - 1)
-            {
-                currentWeaponIndex = -1;
-                rightWeapon = unarmedWeapon; //unarmedWeapon
-                WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
-            }
+
         }
     }
 }
