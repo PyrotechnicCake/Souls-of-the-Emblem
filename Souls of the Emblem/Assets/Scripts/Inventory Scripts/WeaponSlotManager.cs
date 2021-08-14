@@ -14,9 +14,12 @@ namespace Pyro
 
         Animator animator;
 
+        EquipSlotsUI equipSlotsUI;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
+            equipSlotsUI = FindObjectOfType<EquipSlotsUI>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -43,6 +46,7 @@ namespace Pyro
             {
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 LoadWeaponDamageCollider();
+                equipSlotsUI.UpdateWeaponSlotsUI(weaponItem);
 
                 if (weaponItem != null)
                 {

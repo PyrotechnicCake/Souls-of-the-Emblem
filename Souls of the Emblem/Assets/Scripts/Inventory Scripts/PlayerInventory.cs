@@ -33,6 +33,11 @@ namespace Pyro
         {
             currentWeaponIndex = currentWeaponIndex + i;
 
+            if (currentWeaponIndex < -1)
+            {
+                currentWeaponIndex = weaponsInPockets.Length - 1;
+            }
+
             if (currentWeaponIndex == 0 && weaponsInPockets[0] != null)
             {
                 rightWeapon = weaponsInPockets[currentWeaponIndex];
@@ -42,7 +47,6 @@ namespace Pyro
             {
                 currentWeaponIndex = currentWeaponIndex + i;
             }
-
             else if (currentWeaponIndex == 1 && weaponsInPockets[1] !=null)
             {
                 rightWeapon = weaponsInPockets[currentWeaponIndex];
@@ -52,16 +56,18 @@ namespace Pyro
             {
                 currentWeaponIndex = currentWeaponIndex + i;
             }
+            else
+            {
+                currentWeaponIndex = -1;
+                rightWeapon = unarmedWeapon; //unarmedWeapon
+                WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+            }
 
             if (currentWeaponIndex > weaponsInPockets.Length - 1)
             {
                 currentWeaponIndex = -1;
                 rightWeapon = unarmedWeapon; //unarmedWeapon
                 WeaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
-            }
-            if (currentWeaponIndex < -1)
-            {
-                currentWeaponIndex = weaponsInPockets.Length;
             }
         }
     }

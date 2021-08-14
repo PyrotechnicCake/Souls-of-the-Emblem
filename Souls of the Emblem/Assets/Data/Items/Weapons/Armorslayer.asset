@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c17a5e300b36a41872725ae6b8423f, type: 3}
   m_Name: Armorslayer
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -221559412341972542, guid: 4a6afaee57061c94ca394292a446c490, type: 3}
   itemName: Armorslayer
   modelPrefab: {fileID: 2894897526854786824, guid: b7a47603457013542b045f7d77d1a485, type: 3}
   isUnarmed: 0
