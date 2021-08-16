@@ -46297,7 +46297,7 @@ AnimationClip:
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
     m_StopTime: 4.4333334
-    m_OrientationOffsetY: 0
+    m_OrientationOffsetY: 10
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
@@ -91692,7 +91692,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.3333333
+  - time: 2.5
     functionName: DisableCombo
     data: 
     objectReferenceParameter: {fileID: 0}

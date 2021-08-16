@@ -29,6 +29,7 @@ namespace Pyro
 
         void Update()
         {
+            anim.SetBool("isInAir", isInAir);
             isInteracting = anim.GetBool("isInteracting");
 
             float delta = Time.deltaTime;
@@ -36,8 +37,10 @@ namespace Pyro
             canDoCombo = anim.GetBool("canDoCombo");
 
             inputHandler.TickInput(delta);
+
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
+            
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         }
 
@@ -64,6 +67,7 @@ namespace Pyro
             if (isInAir)
             {
                 playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+                isInteracting = true;
             }
         }
     }
