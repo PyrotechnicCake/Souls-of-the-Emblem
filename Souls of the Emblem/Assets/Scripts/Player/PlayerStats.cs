@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,8 @@ namespace Pyro
         [Header("Stats")]
         public int maxHP;
         public int currentHP;
+        public int maxStam;
+        public int currentStam;
         public int str;
         public int mag;
         public int skl;
@@ -30,6 +33,7 @@ namespace Pyro
         public int res;
 
         public HealthBar healthBar;
+        public StaminaBar stamBar;
 
         AnimatorHandler animatorHandler;
 
@@ -40,11 +44,26 @@ namespace Pyro
 
         void Start()
         {
+            //set up the hp bar
             maxHP = baseHP;
-            currentHP = maxHP;
+            currentHP = maxHP;            
             healthBar.SetMaxHealth(maxHP);
+            
+            //set up the stats
             str = baseStr;
+            spd = baseSpd;
             def = baseDef;
+
+            //set up the stamina bar (THIS HAS TO BE AFTER YOU SET SPEED)
+            maxStam = SetMaxStaminaFromSpeed();
+            currentStam = maxStam;
+            stamBar.SetMaxStam(maxStam);
+        }
+
+        private int SetMaxStaminaFromSpeed()
+        {
+            maxStam = ((Mathf.RoundToInt(spd/3)) + 4);
+            return maxStam;
         }
 
         public void TakeDamage(int damage)
@@ -61,6 +80,12 @@ namespace Pyro
                 animatorHandler.PlayTargetAnimation("Death", true);
                 //Handle dead player
             }
+        }
+
+        public void TakeStaminaDamage(int damage)
+        {
+            currentStam = currentStam - damage;
+            stamBar.SetCurrentStam(currentStam);
         }
     }
 }

@@ -12,14 +12,19 @@ namespace Pyro
         //shield collider
         DamageCollider weaponCollider;
 
+        public WeaponItem attackingWeapon;
+
         Animator animator;
 
         EquipSlotsUI equipSlotsUI;
+
+        PlayerStats playerStats;
 
         private void Awake()
         {
             animator = GetComponent<Animator>();
             equipSlotsUI = FindObjectOfType<EquipSlotsUI>();
+            playerStats = GetComponentInParent<PlayerStats>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -77,5 +82,24 @@ namespace Pyro
         }
 
         #endregion
+
+        public void DrainStaminaLight()
+        {
+            float stamMultiplier;
+
+            stamMultiplier = attackingWeapon.LightAttackMultiplier;
+
+            WeaponStats weaponStats = GetComponentInChildren<WeaponStats>();
+            playerStats.TakeStaminaDamage(Mathf.RoundToInt((weaponStats.Wt - (playerStats.str / 5)) * stamMultiplier));
+        }
+        public void DrainStaminaHeavy()
+        {
+            float stamMultiplier;
+
+            stamMultiplier = attackingWeapon.HeavyAttackMultiplier;
+
+            WeaponStats weaponStats = GetComponentInChildren<WeaponStats>();
+            playerStats.TakeStaminaDamage(Mathf.RoundToInt((weaponStats.Wt - (playerStats.str / 5)) * stamMultiplier));
+        }
     }
 }

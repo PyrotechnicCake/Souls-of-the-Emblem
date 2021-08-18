@@ -8,11 +8,13 @@ namespace Pyro
     {
         AnimatorHandler animatorHandler;
         InputHandler inputHandler;
+        WeaponSlotManager weaponSlotManager;
         public string lastAttack;
 
         private void Awake()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             inputHandler = GetComponent<InputHandler>();
         }
 
@@ -30,12 +32,14 @@ namespace Pyro
 
         public void HandleLightAttack(WeaponItem weapon)
         {
+            weaponSlotManager.attackingWeapon = weapon;
             animatorHandler.PlayTargetAnimation(weapon.Light_Attack_1, true);
             lastAttack = weapon.Light_Attack_1;
         }
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
+            weaponSlotManager.attackingWeapon = weapon;
             animatorHandler.PlayTargetAnimation(weapon.Heavy_Attack_1, true);
             lastAttack = weapon.Heavy_Attack_1;
         }

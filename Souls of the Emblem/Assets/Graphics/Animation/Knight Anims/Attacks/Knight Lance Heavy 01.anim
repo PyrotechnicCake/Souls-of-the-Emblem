@@ -120183,6 +120183,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 4.1
+    functionName: DrainStaminaHeavy
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 4.133333
     functionName: OpenWeaponDamageCollider
     data: 
