@@ -42,6 +42,8 @@ namespace Pyro
             playerLocomotion.HandleRollingAndSprinting(delta);
             
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+
+            CheckForInteractableObject();
         }
 
         private void FixedUpdate()
@@ -61,6 +63,7 @@ namespace Pyro
             inputHandler.sprintFlag = false;
             inputHandler.attackInput = false;
             inputHandler.heavyInput = false;
+            inputHandler.interactInput = false;
             inputHandler.d_Pad_Left = false;
             inputHandler.d_Pad_Right = false;
 
@@ -68,6 +71,30 @@ namespace Pyro
             {
                 playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
                 isInteracting = true;
+            }
+        }
+
+        public void CheckForInteractableObject()
+        {
+            RaycastHit hit;
+
+            if(Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f, cameraHandler.ignoreLayers))
+            {
+                if (hit.collider.tag == "Interactable")
+                {
+                    Interactable interactableObject = hit.collider.GetComponent<Interactable>();
+
+                    if(interactableObject != null)
+                    {
+                        string interactableText = interactableObject.interactableText;
+                        //do random UI shit
+
+                    if(inputHandler.interactInput)
+                        {
+                            hit.collider.GetComponent<Interactable>().Interact(this);
+                        }
+                    }
+                }
             }
         }
     }

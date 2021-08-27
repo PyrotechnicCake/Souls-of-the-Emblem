@@ -16,6 +16,7 @@ namespace Pyro
         public bool dodgeInput;
         public bool attackInput;
         public bool heavyInput;
+        public bool interactInput;
 
         //depad inputs
         public bool d_Pad_Left;
@@ -67,6 +68,7 @@ namespace Pyro
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotInput();
+            HandleInteractableButtonInput();
         }
 
         //take movement inputs
@@ -143,6 +145,11 @@ namespace Pyro
             {
                 playerInventory.ChangeWeapon(-1);
             }
+        }
+
+        private void HandleInteractableButtonInput()
+        {
+            inputActions.PlayerActions.Interact.performed += i => interactInput = true;
         }
     }
 }

@@ -27,7 +27,10 @@ namespace Pyro
 
         public void UpdateWeaponSlotsUI(WeaponItem weapon)
         {
-            
+            Debug.Log("updating weapon slots");
+            delta = 0;
+            beta = 0;
+
             //get the icons for the items in our inventory
             if (delta < EIcon.Length)
             {

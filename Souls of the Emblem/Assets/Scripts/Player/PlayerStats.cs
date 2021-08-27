@@ -68,7 +68,10 @@ namespace Pyro
 
         public void TakeDamage(int damage)
         {
-            currentHP = currentHP - damage;
+            if (damage - def > 0)
+            {
+                currentHP = currentHP - (damage - def);
+            }
 
             healthBar.SetCurrentHealth(currentHP);
 
