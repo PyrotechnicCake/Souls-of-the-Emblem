@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Pyro
 {
@@ -38,6 +39,9 @@ namespace Pyro
                     Debug.Log("assigning the weapon");
                     playerInventory.weaponsInPockets[i] = weaponItem;
                     equipSlotsUI.UpdateWeaponSlotsUI(weaponItem);
+                    playerManager.itemInteractableUIGameObject.GetComponentInChildren<Text>().text = "Picked up " + weaponItem.itemName;
+                    playerManager.interactableUI.itemImage.sprite = weaponItem.itemIcon;
+                    playerManager.itemInteractableUIGameObject.SetActive(true);
                     i = playerInventory.weaponsInPockets.Length;
                     Destroy(gameObject);
                 }

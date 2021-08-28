@@ -11,6 +11,10 @@ namespace Pyro
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
 
+        public InteractableUI interactableUI;
+        public GameObject interactableUIGameObject;
+        public GameObject itemInteractableUIGameObject;
+
         public bool isInteracting;
 
         [Header("Player Flags")]
@@ -25,6 +29,7 @@ namespace Pyro
             anim = GetComponentInChildren<Animator>();
             cameraHandler = FindObjectOfType<CameraHandler>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
+            interactableUI = FindObjectOfType<InteractableUI>();
         }
 
         void Update()
@@ -88,12 +93,27 @@ namespace Pyro
                     {
                         string interactableText = interactableObject.interactableText;
                         //do random UI shit
+                        interactableUI.interactableText.text = interactableText;
+                        interactableUIGameObject.SetActive(true);
+
 
                     if(inputHandler.interactInput)
                         {
                             hit.collider.GetComponent<Interactable>().Interact(this);
                         }
                     }
+                }
+            }
+            else
+            {
+                if (interactableUIGameObject != null)
+                {
+                    interactableUIGameObject.SetActive(false);
+                }
+
+                if (itemInteractableUIGameObject != null && inputHandler.interactInput)
+                {
+                    itemInteractableUIGameObject.SetActive(false);
                 }
             }
         }
