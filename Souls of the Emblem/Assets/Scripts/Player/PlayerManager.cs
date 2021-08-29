@@ -44,9 +44,9 @@ namespace Pyro
             inputHandler.TickInput(delta);
 
             playerLocomotion.HandleMovement(delta);
-            playerLocomotion.HandleRollingAndSprinting(delta);
-            
+            playerLocomotion.HandleRollingAndSprinting(delta);            
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+            playerLocomotion.HandleJumping();
 
             CheckForInteractableObject();
         }
@@ -69,6 +69,7 @@ namespace Pyro
             inputHandler.attackInput = false;
             inputHandler.heavyInput = false;
             inputHandler.interactInput = false;
+            inputHandler.jumpInput = false;
             inputHandler.d_Pad_Left = false;
             inputHandler.d_Pad_Right = false;
 

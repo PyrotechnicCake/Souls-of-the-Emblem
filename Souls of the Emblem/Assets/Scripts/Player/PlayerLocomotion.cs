@@ -239,6 +239,32 @@ namespace Pyro
                 }
         }
 
+        public void HandleJumping()
+        {
+            /*if (playerManager.isInteracting)
+                return;
+
+            if (inputHandler.jumpInput)
+            {
+                //if (inputHandler.moveAmount > 0)
+                {                    
+                    animatorHandler.PlayTargetAnimation("Jump", true);
+                    moveDirection.y = 0;
+
+                    if (inputHandler.moveAmount > 0) //this might be bad
+                    {
+                        moveDirection = cameraObject.forward * inputHandler.vertical;
+                        moveDirection += cameraObject.right * inputHandler.horizontal;
+                        Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
+                        myTransform.rotation = jumpRotation;
+                        moveDirection *= walkingSpeed;
+                        Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
+                        rigidbody.velocity = projectedVelocity;
+                    }
+                }
+            }*/
+        }
+
         #endregion
     }
 }

@@ -17,6 +17,7 @@ namespace Pyro
         public bool attackInput;
         public bool heavyInput;
         public bool interactInput;
+        public bool jumpInput;
 
         //depad inputs
         public bool d_Pad_Left;
@@ -69,6 +70,7 @@ namespace Pyro
             HandleAttackInput(delta);
             HandleQuickSlotInput();
             HandleInteractableButtonInput();
+            HandleJumpInput();
         }
 
         //take movement inputs
@@ -150,6 +152,11 @@ namespace Pyro
         private void HandleInteractableButtonInput()
         {
             inputActions.PlayerActions.Interact.performed += i => interactInput = true;
+        }
+
+        private void HandleJumpInput()
+        {
+            inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
         }
     }
 }
