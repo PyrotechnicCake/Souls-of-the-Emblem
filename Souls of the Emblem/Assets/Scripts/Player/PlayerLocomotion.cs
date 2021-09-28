@@ -257,6 +257,7 @@ namespace Pyro
                         moveDirection = cameraObject.forward * inputHandler.vertical;
                         moveDirection += cameraObject.right * inputHandler.horizontal;
                         Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
+                        jumpRotation.x = 0; //this is my fix and it shall not be challenged
                         myTransform.rotation = jumpRotation;
                     }
                     else

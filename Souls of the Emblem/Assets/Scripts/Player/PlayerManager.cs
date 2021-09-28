@@ -49,6 +49,11 @@ namespace Pyro
             playerLocomotion.HandleJumping();
 
             CheckForInteractableObject();
+
+            Quaternion notRotate = playerLocomotion.myTransform.rotation; //the things I have to do to stop the thing from fucvkig toreateingh
+            notRotate.x = 0;
+            notRotate.z = 0;
+            playerLocomotion.myTransform.rotation = notRotate;
         }
 
         private void FixedUpdate()
