@@ -9,13 +9,13 @@ namespace Pyro
     {
         //basestats
         [Header("Base Stats")]
-        public int baseHP = 28;
-        public int baseStr = 13;
+        public int baseHP = 1;
+        public int baseStr = 1;
         public int baseMag = 2;
         public int baseSkl = 12;
-        public int baseSpd = 10;
+        public int baseSpd = 1;
         public int baseLck = 6;
-        public int baseDef = 14;
+        public int baseDef = 1;
         public int baseRes = 3;
 
         //stats
@@ -36,6 +36,7 @@ namespace Pyro
         public StaminaBar stamBar;
 
         AnimatorHandler animatorHandler;
+        CharacterStats characterStats;
 
         private void Awake()
         {
@@ -44,15 +45,18 @@ namespace Pyro
 
         void Start()
         {
+            //find my character
+            characterStats = GetComponentInChildren<CharacterStats>();
+
             //set up the hp bar
-            maxHP = baseHP;
+            maxHP = characterStats.baseHP;
             currentHP = maxHP;            
             healthBar.SetMaxHealth(maxHP);
             
             //set up the stats
-            str = baseStr;
-            spd = baseSpd;
-            def = baseDef;
+            str = characterStats.baseStr;
+            spd = characterStats.baseSpd;
+            def = characterStats.baseDef;
 
             //set up the stamina bar (THIS HAS TO BE AFTER YOU SET SPEED)
             maxStam = SetMaxStaminaFromSpeed();

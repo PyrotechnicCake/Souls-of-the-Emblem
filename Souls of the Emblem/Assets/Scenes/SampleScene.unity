@@ -2273,6 +2273,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackingWeapon: {fileID: 0}
+--- !u!114 &979955221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979955217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c563e45b05d6704e93e4b48468a6f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHP: 28
+  baseStr: 13
+  baseMag: 2
+  baseSkl: 12
+  baseSpd: 10
+  baseLck: 6
+  baseDef: 14
+  baseRes: 3
+  maxHP: 0
+  currentHP: 0
+  maxStam: 0
+  currentStam: 0
+  str: 0
+  mag: 0
+  skl: 0
+  spd: 0
+  lck: 0
+  def: 0
+  res: 0
+  swordProf: 3
+  lanceProf: 3
+  axeProf: 3
 --- !u!1 &987862881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,6 +3983,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   canRotate: 1
+--- !u!114 &1054889214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054889210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c563e45b05d6704e93e4b48468a6f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHP: 28
+  baseStr: 8
+  baseMag: 5
+  baseSkl: 6
+  baseSpd: 8
+  baseLck: 6
+  baseDef: 6
+  baseRes: 2
+  maxHP: 0
+  currentHP: 0
+  maxStam: 0
+  currentStam: 0
+  str: 0
+  mag: 0
+  skl: 0
+  spd: 0
+  lck: 0
+  def: 0
+  res: 0
+  swordProf: 0
+  lanceProf: 0
+  axeProf: 0
 --- !u!1 &1123202391
 GameObject:
   m_ObjectHideFlags: 0
